@@ -9,14 +9,16 @@ const transformGoogleProfile = (profile, accessToken) => ({
   name: profile.displayName,
   avatar: profile.image.url,
   email : profile.emails,
-  accessToken : accessToken
+  accessToken : accessToken,
+  provider : 'google'
 });
 
 const transformFacebookProfile = (profile, accessToken) => ({
   name: profile.name,
   avatar: profile.picture.data.url,
   email : profile.email,
-  accessToken : accessToken
+  accessToken : accessToken,
+  provider : 'facebook'
 });
 
 // Register Facebook Passport strategy
