@@ -27,6 +27,7 @@ passport.use(new FacebookStrategy(facebook,
   async (accessToken, refreshToken, profile, done)
     // Return done callback and pass transformed user object
     => {
+      console.log(profile._json)
       done(null, transformFacebookProfile(profile._json, accessToken))
     }
 ));
@@ -36,6 +37,7 @@ passport.use(new FacebookStrategy(facebook,
 passport.use(new GoogleStrategy(google,
   async (accessToken, refreshToken, profile, done)
     => {
+    console.log(profile._json)
     done(null, transformGoogleProfile(profile._json, accessToken)) }
 ));
 
