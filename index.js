@@ -55,7 +55,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Set up Facebook auth routes
-app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['user_birthday'] }));
+app.get('/auth/facebook', passport.authenticate('facebook'));
 
 app.get('/auth/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/auth/facebook' }),
@@ -64,7 +64,7 @@ app.get('/auth/facebook/callback',
 
 
 // Set up Google auth routes
-app.get('/auth/google', passport.authenticate('google', { scope: ['profile','email'] }));
+app.get('/auth/google', passport.authenticate('google', { scope: ['profile','email','birthday'] }));
 
 app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/auth/google' }),
