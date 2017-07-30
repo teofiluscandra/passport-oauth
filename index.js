@@ -55,7 +55,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Set up Facebook auth routes
-app.get('/auth/facebook', passport.authenticate('facebook'));
+app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['user_birthday'] }));
 
 app.get('/auth/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/auth/facebook' }),
