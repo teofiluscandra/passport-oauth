@@ -22,7 +22,10 @@ passport.use(new FacebookStrategy(facebook,
   // Gets called when user authorizes access to their profile
   async (accessToken, refreshToken, profile, done)
     // Return done callback and pass transformed user object
-    => done(null, transformFacebookProfile(profile._json))
+    => {
+      console.log(accessToken);
+      done(null, transformFacebookProfile(profile._json))
+    }
 ));
 
 
@@ -65,7 +68,7 @@ app.get('/auth/google/callback',
     });
 
 // Launch the server on the port 3000
-const server = app.listen(process.env.PORT || 5000, () => {
+const server = app.listen(process.env.PORT || 3000, () => {
   const { address, port } = server.address();
   console.log(`Listening at http://${address}:${port}`);
 });
