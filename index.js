@@ -12,9 +12,11 @@ const transformGoogleProfile = (profile, accessToken) => ({
   accessToken : accessToken
 });
 
-const transformFacebookProfile = (profile) => ({
+const transformFacebookProfile = (profile, accessToken) => ({
   name: profile.name,
   avatar: profile.picture.data.url,
+  email : profile.email,
+  accessToken : accessToken
 });
 
 // Register Facebook Passport strategy
@@ -23,8 +25,7 @@ passport.use(new FacebookStrategy(facebook,
   async (accessToken, refreshToken, profile, done)
     // Return done callback and pass transformed user object
     => {
-      console.log(accessToken);
-      done(null, transformFacebookProfile(profile._json))
+      done(null, transformFacebookProfile(profile._json, accessToken))
     }
 ));
 
