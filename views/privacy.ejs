@@ -1,0 +1,464 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boogaloo Terms & Conditions</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+</head>
+<body>
+
+<style>
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*
+ * -- BASE STYLES --
+ * Most of these are inherited from Base, but I want to change a few.
+ */
+body {
+    line-height: 1.7em;
+    color: #7f8c8d;
+    font-size: 13px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+    color: #34495e;
+}
+
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+/*
+ * -- LAYOUT STYLES --
+ * These are some useful classes which I will need
+ */
+.l-box {
+    padding: 1em;
+}
+
+.l-box-lrg {
+    padding: 2em;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.is-center {
+    text-align: center;
+}
+
+
+
+/*
+ * -- PURE FORM STYLES --
+ * Style the form inputs and labels
+ */
+.pure-form label {
+    margin: 1em 0 0;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.pure-form input[type] {
+    border: 2px solid #ddd;
+    box-shadow: none;
+    font-size: 100%;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+/*
+ * -- PURE BUTTON STYLES --
+ * I want my pure-button elements to look a little different
+ */
+.pure-button {
+    background-color: #1f8dd6;
+    color: white;
+    padding: 0.5em 2em;
+    border-radius: 5px;
+}
+
+a.pure-button-primary {
+    background: white;
+    color: #1f8dd6;
+    border-radius: 5px;
+    font-size: 120%;
+}
+
+
+/*
+ * -- MENU STYLES --
+ * I want to customize how my .pure-menu looks at the top of the page
+ */
+
+.home-menu {
+    padding: 0.5em;
+    text-align: center;
+    box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
+}
+.home-menu {
+    background: #2d3e50;
+}
+.pure-menu.pure-menu-fixed {
+    /* Fixed menus normally have a border at the bottom. */
+    border-bottom: none;
+    /* I need a higher z-index here because of the scroll-over effect. */
+    z-index: 4;
+}
+
+.home-menu .pure-menu-heading {
+    color: white;
+    font-weight: 400;
+    font-size: 120%;
+}
+
+.home-menu .pure-menu-selected a {
+    color: white;
+}
+
+.home-menu a {
+    color: #6FBEF3;
+}
+.home-menu li a:hover,
+.home-menu li a:focus {
+    background: none;
+    border: none;
+    color: #AECFE5;
+}
+
+
+/*
+ * -- SPLASH STYLES --
+ * This is the blue top section that appears on the page.
+ */
+
+.splash-container {
+    background: #1f8dd6;
+    z-index: 1;
+    overflow: hidden;
+    /* The following styles are required for the "scroll-over" effect */
+    width: 100%;
+    height: 88%;
+    top: 0;
+    left: 0;
+    position: fixed !important;
+}
+
+.splash {
+    /* absolute center .splash within .splash-container */
+    width: 80%;
+    height: 50%;
+    margin: auto;
+    position: absolute;
+    top: 100px; left: 0; bottom: 0; right: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* This is the main heading that appears on the blue section */
+.splash-head {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border: 3px solid white;
+    padding: 1em 1.6em;
+    font-weight: 100;
+    border-radius: 5px;
+    line-height: 1em;
+}
+
+/* This is the subheading that appears on the blue section */
+.splash-subhead {
+    color: white;
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+}
+
+/*
+ * -- CONTENT STYLES --
+ * This represents the content area (everything below the blue section)
+ */
+.content-wrapper {
+    /* These styles are required for the "scroll-over" effect */
+    position: absolute;
+    top: 87%;
+    width: 100%;
+    min-height: 12%;
+    z-index: 2;
+    background: white;
+
+}
+
+/* We want to give the content area some more padding */
+.content {
+    padding: 1em 1em 3em;
+}
+
+/* This is the class used for the main content headers (<h2>) */
+.content-head {
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 2em 0 1em;
+}
+
+/* This is a modifier class used when the content-head is inside a ribbon */
+.content-head-ribbon {
+    color: white;
+}
+
+/* This is the class used for the content sub-headers (<h3>) */
+.content-subhead {
+    color: #1f8dd6;
+}
+    .content-subhead i {
+        margin-right: 7px;
+    }
+
+/* This is the class used for the dark-background areas. */
+.ribbon {
+    background: #2d3e50;
+    color: #aaa;
+}
+
+/* This is the class used for the footer */
+.footer {
+    background: #111;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/*
+ * -- TABLET (AND UP) MEDIA QUERIES --
+ * On tablets and other medium-sized devices, we want to customize some
+ * of the mobile styles.
+ */
+@media (min-width: 48em) {
+
+    /* We increase the body font size */
+    body {
+        font-size: 16px;
+    }
+
+    /* We can align the menu header to the left, but float the
+    menu items to the right. */
+    .home-menu {
+        text-align: left;
+    }
+        .home-menu ul {
+            float: right;
+        }
+
+    /* We increase the height of the splash-container */
+/*    .splash-container {
+        height: 500px;
+    }*/
+
+    /* We decrease the width of the .splash, since we have more width
+    to work with */
+    .splash {
+        width: 50%;
+        height: 50%;
+    }
+
+    .splash-head {
+        font-size: 250%;
+    }
+
+
+    /* We remove the border-separator assigned to .l-box-lrg */
+    .l-box-lrg {
+        border: none;
+    }
+
+}
+
+/*
+ * -- DESKTOP (AND UP) MEDIA QUERIES --
+ * On desktops and other large devices, we want to over-ride some
+ * of the mobile and tablet styles.
+ */
+@media (min-width: 78em) {
+    /* We increase the header font size even more */
+    .splash-head {
+        font-size: 300%;
+    }
+}
+
+</style>
+    
+    <div class="content">
+        <h2 class="content-head is-center">Terms And Condition</h2>
+            <div class="l-box-lrg">
+                <p>
+                   <b>Important </b> 
+                </p>
+                <p>
+                  The Boogaloo supports the Responsible Service of Alcohol. It is an offense for a person under the age of 21 years of age to falsely represent themselves to be of, or over 21 years of age. We reserve the right to refuse to enter into the Agreement or accept an Order or Purchase to serve, sell or supply Products to any person we suspect to be under 21 years of age, or who is unable to satisfy us that they are 21 years of age or over, or who we reasonably suspect is going to supply alcohol to a person under 21 years of age.
+                </p>
+                <p>
+                  By registering an account with us, you acknowledge and agree that you understand the prohibition on the sale and supply of liquor to minors and you confirm that you are at least 21 years of age.
+
+                </p>
+                <p>
+                This terms of Service Agreement (this “Agreement”) is an agreement between you (whom we refer to as "you", "your" or the "Customer" in this Agreement) and The Boogaloo as The Boogaloo Bali, we refer to ourselves as "Boogaloo", "we" or "us" or "our" in this Agreement).
+ 
+                </p>
+                <b>General Matters</b>
+                <ol type="1">
+                  <li>Please read this Agreement carefully. In purchasing any Products by using the Sites or by using any services made available through them or by transacting through or on them, you are agreeing to the terms and conditions of this Agreement.</li>
+                  <li>We may change this Agreement at any time without notice. The most current version of this Agreement will be published on the Sites. Use of the Sites or purchase of any Products or Services after a change has been made to the Agreement and after you have been made aware of the change will be deemed an acceptance of the change.
+                  </li>
+                  <li>Your statutory rights: As a consumer, nothing in this Agreement affects your non-excludable statutory rights. </li>
+                </ol>
+
+                  <b>Definitions</b>
+                  <p>In this Agreement, we use various defined terms. You will know they are defined because they begin with a capital letter. This is what they mean:</p>
+                  <ol>
+                    <li>"Acceptable ID" means international driver license, passport, Proof of age card, government issued identification card. No other form of identification will be accepted.</li>
+                    <li>"Delivery Fee" means the delivery fee for delivering the Products.</li>
+                    <li>"Delivery Hours" means the delivery hours endorsed on Packaged Liquor </li>
+                    <li>"Minor" means a person younger than 21 years of age.</li>
+                    <li>"Order" means a commitment by you to purchase the Products when you click the button to place your order.</li>
+                    <li>"Order Price" means the total of the Product Price and Delivery Fee of the Products that you wish to purchase.</li>
+                    <li>"Product Price" means the price charged for the Products.</li>
+                    <li>"Products" means the alcohol and other beverages items and the delivery services provided by us available on the Sites.</li>
+                    <li>"Purchase" means the Order that we have accepted.</li>
+                    <li>"Register" means create an account on the Sites.</li>
+                    <li>"Service" means all or any of the services provided via the Sites (or via other electronic or other communication) including the information services, content and transaction capabilities on the Sites (including the ability by you to Order and Purchase).</li>
+                    <li>"Website" means www.theboogaloobali.com</li>
+                  </ol>
+
+                  <b>Use of the Sites and the Service</b>
+                  <ol>
+                  <li>Minimum Age: You must be at least 21 years of age to use the Sites, the Service and to make any Order and Purchase. Please refer to the 'IMPORTANT NOTICE' above.</li>
+                  <li>Responsible serving of alcohol: The Products are supplied and delivered to you directly by us However, we reserve the right to decline or cancel any Order and Purchase by you if we reasonably believe that such Order or Purchase is or may be in breach of the applicable laws and regulations in relation to the sale and supply of alcohol.</li>
+                  <li>Prevention on use: We reserve the right to prevent you using the Sites and the Service (or any part of them) and to prevent you from making any Order and Purchase.</li>
+                  <li>Equipment: The use of the Site and the Service do not include the provision of a computer or other necessary equipment to access the Sites or the Service. To use the Sites or Service, you will require internet connectivity and appropriate telecommunication links. We shall not be liable for any telephone costs, telecommunications costs or other costs that you may incur as a result of using or accessing the Sites or Service.</li>
+                  <li>Registration: You do not need to Register to use much of the functionality of the Sites or to access much of the Service. However, you must Register in order to Order and Purchase from the Sites. To Register you need to supply us with your name, date of birth, delivery address, email address, contact details and possibly some other personal information. You must provide accurate and complete information. See our Privacy Policy for more details about this. A failure by you to provide correct and/or accurate personal information to us, or the provision by you of false or misleading information is a breach of this Agreement.</li>
+                  <li>Passwords: Once you finish Registration, you must keep the password confidential and immediately notify us if any unauthorised third party becomes aware of that password or if there is any unauthorised use of your account or any breach of security known to you. You may never use another person’s account or allow any other person to use your account. You are solely responsible for the activity that occurs on your account and you must keep your password secure.</li>
+                  <li>Closing accounts: We reserve the right to close accounts if any user is seen to be using proxy IPs (Internet Protocol addresses) in order to attempt to hide the use of multiple registration accounts, or if a non-Australian user pretends to be a user, or disrupts the Sites or the Service in any way or if we believe that the user is a Minor.</li>
+                  </ol>
+
+                  <b>Relationship</b>
+                  <ol>
+                  <li>We are the operator of the Site and we facilitate the order, sale and purchase and delivery of alcohol beverages to you.</li>
+                  </ol>
+
+                  <b>Purchase of Products</b>
+                  <p>Requirements: You may only place an Order if you meet the following requirements:</p>
+                  <ol>
+                  <li>You are not a Minor;</li>
+                  <li>You are not Purchasing on behalf of, or with the intention to supply to, a Minor;</li>
+                  <li>Your total Order Price exceeds the minimum order requirement set by us;</li>
+                  <li>The nominated place of delivery of the Products is within the area we deliver to;</li>
+                  <li>The nominated delivery time of the Products is within the Delivery Hours;</li>
+                  <li>You agree to make payment to us for the Order Price, comprising of the Product Price and Delivery Fee;</li>
+                  <li>You agree that the Delivery Fee is non-refundable in any circumstances subject to clause 7;</li>
+                  <li>You agree and acknowledge that we abide by the Responsible Service of Alcohol regulations and we have the right to enforce such regulations.Order: When you click the "place order" button, you make a commitment to purchase the Products at the Order Price ("Order"), we will email you, as soon as reasonably possible during Delivery Hours or if outside Delivery Hours then as soon as reasonably possible during the next Delivery Hours:</li>
+                  
+                  </ol>
+                  <p>Order: When you click the "place order" button, you make a commitment to purchase the Products at the Order Price ("Order"), we will email you, as soon as reasonably possible during Delivery Hours or if outside Delivery Hours then as soon as reasonably possible during the next Delivery Hours:</p>
+                  <ol>
+                  <li>if we accept your order whereupon the purchase is completed; or</li>
+                  <li>if we decline or is unable to accept your Order.</li>
+                  </ol>
+                  <p>Payment: We will take payment of the Order Price once your Purchase is complete.</p>
+                  <ol>
+                  <li>Charge backs and disputes: We shall be liable and responsible for dealing with any charge backs or disputes. Please contact us in relation to any disputes.</li>
+                  </ol>
+                  <p>Delivery:</p>
+                  <ol>
+                  <li>We will use our reasonable endeavours to deliver the Products to you by the time and date stated on the Confirmation Email and otherwise in accordance with the delivery hours</li>
+                  <li>We must comply with its obligations under its Liquor Licence when delivering the Products. It is therefore your obligation to ensure that, you or an authorised representative who is at least 21 years of age,:
+                  <ol type="A">
+                  <li>is present at the nominated place of delivery to accept delivery of the Products;</li>
+                  <li>can produce an Accepatble ID at the time of delivery. The Products will not be delivered to you or a person authorised to act on your behalf unless Acceptable ID can be produced to us at the time of the delivery.</li>
+                  <li>sign the delivery docket confirming acceptance of the Products. You should check the Products against the delivery docket prior to signing the delivery docket. The delivery docket shall be deemed conclusive evidence of acceptance of the Products.</li>
+                  </ol>
+                  <li>We reserve the right to refuse to deliver the Products for any reason whatsoever and including but not limited to refusing delivery to a person/s who we reasonably believe are intoxicated, drunk or disorderly, refusing delivery to specific buildings for access or safety reasons, or refusing delivery because we reasonably believe that the Products will, may or are likely to be supplied to persons under 18 years of age following delivery.</li>
+                  </li>
+                  <li>We will use our reasonable endeavours to complete the delivery in one attempt, however we reserve the right to complete the delivery in more than one attempt depending on the size of the order</li>
+                  <li>We will wait up to 5 minutes at the nominated place of delivery. If you or your authorised representatives are not present within 5 minutes to accept delivery of the Products, we shall return the Products.</li>
+                  <li>In the event of unsuccessful delivery pursuant to clauses 5.5.4 or 5.5.6, the Order shall be deemed cancelled and the Order Price less Delivery Fee will be refunded to you within 24 hours of the delivery date.</li>
+                  <li>This Agreement applies: By making an Order, you acknowledge that the Order and the Purchase is made subject to this Agreement.</li>
+                  <li>Goods and Services Tax: The Order Price for the Products is inclusive of any GST.</li>
+                  <li>Legal title to the Products will transfer to you (i.e. the Products will become your personal property) when the Products are delivered to the nominated place of delivery.</li>
+                  
+                  </ol>
+                  
+                  <b>Cancellation</b>
+                  <p>If you need to cancel the Order or Purchase, please email info@theboogaloobali.com Cancelled Orders and Purchases may be subject to the Delivery Fee being charged.</p>
+                  
+
+                  <b>Refunds & Returns</b>
+                  <p>You agree that you cannot change or cancel an order once payment has been confirmed. </p>
+                  <p>If you are unsatisfied with the products provided or if the products provided are not as advertised and or a major problem is identified with the product, please contact our email to find out more about our refunds & returns policies.</p>
+                  
+                  <b>Warranty Disclaimers</b>
+                  <ol>
+                  <li>any content or information accessible via the Sites is accurate, complete, reliable, current or error-free including the Product Price, Delivery Fee, the Delivery Hours, the Product description and the Product availability. Such information is subject to change without notice.</li>
+                  <li>your use of the Service or the Sites will be uninterrupted and we do not warrant that any information (or messages) transmitted via the Service or the Sites will be transmitted accurately, reliably, in a timely manner or at all.</li>
+                  <li>the Service or the Sites is free from viruses or anything else which may have a harmful effect on any technology.</li>
+                  <li>We will use reasonable endeavours to correct any errors or omissions as soon as practicable after being notified of same.</li>
+                  </ol>
+
+                  <b>Suspension and Termination</b>
+                  <ol>
+                  <li>If you use the Sites or Service in contravention of this Agreement, we may suspend your use of the Service and/or Sites (in whole or in part).</li>
+                  <li>We shall fully co-operate with any law enforcement authorities or court order requesting or directing us to disclose the identity or locate anyone in breach of this Agreement.</li>
+                  <li>Our rights to terminate this Agreement shall not prejudice any other right or remedy we may have in respect of any breach or any rights, obligations or liabilities accrued prior to termination.</li>
+                  </ol>
+
+                  <b>Limitation Of Liability</b>
+                  <p>We exclude, in so far as it is legally possible all liability and responsibility for damages including, but not limited to, indirect or consequential damages, or any damages whatsoever arising from:</p>
+                  <ol>
+                  <li>the accuracy, completeness, fitness for purpose or legality of any Product or information accessed using the Service or Sites or otherwise; and</li>
+                  <li>the transmission or the reception of or the failure to transmit or to receive any material of whatever nature;</li>
+                  <li>your use of any information or materials on the Sites (which is entirely at your own risk and it is your responsibility); and</li>
+                  <li>the supply, delivery, use and consumption of the Products.</li>
+                  </ol>
+
+                  <b>Copyright Infringment</b>
+                  <p>We reserve the right (but disclaims any duty, obligation, or responsibility) to refuse to post, remove in their entirety, or edit (at any time and without prior notice) any Submissions on the Sites for any reason or no reason whatsoever, in its absolute and sole discretion. If you believe in good faith that Submissions posted by the Sites infringe your copyright, you (or your agent) may send us a notice requesting that the Submission(s) be removed from the Site(s).</p>
+                  
+                  <b>Intellectual Property Rights</b>
+                  <ol>
+                  <li>The names, images and logos identifying Boogaloo, us  or third party supplier and their products and services, are  proprietary marks and no use should be made unless with prior written consent.</li>
+                  <li>You acknowledge that no title or interest to Boogaloo or our's intellectual property rights is transferred to you and you agree to make no claim of interest in any of Boogaloo or our services or Sites.</li>
+                  <li>A Submission by you shall be considered (and we may treat it as) non-confidential (subject to our obligations under data protection legislation). You grant us a royalty-free, perpetual, irrevocable, non-exclusive licence to use, copy, modify, adapt, translate, publish and distribute world-wide any Submission.</li>
+                  </ol>
+
+                  <b>General</b>
+                  <ol>
+                  <li>Currency: All prices are in Indonesian Rupiah.</li>
+                  <li>GST: Except where indicated otherwise, prices include GST.</li>
+                  <li>No other terms: Except as expressly stated in this Agreement, all warranties, conditions and other terms, whether express or implied, by statute, common law or otherwise are hereby excluded to the fullest extent permitted by law</li>
+                  </ol>
+
+                  <b>Promotional Offers</b>
+                  <ol>
+                  <li>All discounts, vouchers or codes only apply to first purchases through boogaloo unless otherwise stated.</li>
+                  <li>All promotional validity dates are specified on the adverts, coupons or leaflets, please refer to the summary terms on these pieces of artwork for exact and further information specific to that promotion and its promotional period.</li>
+                  <li>Discounts, vouchers or codes cannot be exchanged for cash or any other alternatives and have no monetary value. Cancelled orders will invalidate the use of that code on an account.</li>
+                  <li>All discounts, vouchers and codes can only be used on one order, per person. Any remaining credit from that discount, voucher or code cannot be carried forward to any additional or subsequent orders. Any attempt to manipulate the system and use of discounts, vouchers or codes by use of bulk entry via third parties or syndicates, macros, ‘script’, ‘brute force’, masking identity by manipulating IP addresses, using identities other than their own or any other automated means or other automated means (including systems which can be programmed to enter), will render the order and use of that discount, voucher or code invalid and may potentially lead to that account being closed down.</li>
+                  <li>If for any reason a discount, voucher or code becomes invalid due to technical failures or any other causes beyond the control of boogaloo, or a drink becomes unavailable, boogaloo reserves the right (subject to any written directions given under applicable law) to cancel, suspend or modify the campaign that is related to that discount, voucher or code and not re-issue any additional discounts, vouchers or codes to affected customers.</li>
+                  </ol>
+            </div>
+        </div>
+</body>
+</html>

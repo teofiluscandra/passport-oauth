@@ -53,7 +53,7 @@ const app = express();
 // Initialize Passport
 app.use(passport.initialize());
 app.use(passport.session());
-
+app.set('view engine', 'ejs');
 // Set up Facebook auth routes
 app.get('/auth/facebook', passport.authenticate('facebook'));
 
@@ -71,6 +71,10 @@ app.get('/auth/google/callback',
   (req, res) => {
         res.redirect('OAuthLogin://login?user=' + JSON.stringify(req.user))
     });
+
+app.get('/privacypolicy', function(req,res){
+  res.render('privacy');
+})
 
 // Launch the server on the port 3000
 const server = app.listen(process.env.PORT || 3000, () => {
